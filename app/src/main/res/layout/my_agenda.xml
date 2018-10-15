@@ -130,13 +130,13 @@
                 android:visibility="visible" />
 
             <TextView
-                android:layout_weight="1"
-                android:text="minutes"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_gravity="end"
                 android:layout_margin="10dp"
+                android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
+                android:text="minutes"
                 android:textAlignment="textEnd"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
