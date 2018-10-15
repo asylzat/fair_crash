@@ -64,7 +64,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="151dp"
                 android:layout_weight="1"
                 android:text="Consultations" />
@@ -86,7 +86,7 @@
             <TextView
 
                 android:layout_width="wrap_content"
-                android:layout_height="10dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Prseentations"
                 android:textDirection="ltr" />

@@ -61,7 +61,7 @@ public class EventAdapter extends ArrayAdapter<Company> {
                 list.remove(position);
                 myAgenda.calculateTotal();
                 notifyDataSetChanged();
-                Toast toast = Toast.makeText(getContext(), "Removed", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getContext(), "Deleted", Toast.LENGTH_SHORT);
                 toast.show();
             }
         });

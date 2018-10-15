@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -71,6 +72,8 @@ public class CompanyAdapter extends ArrayAdapter<Company> {
             public void onClick(View view) {
                 MainActivity.events.add(company);
                 notifyDataSetChanged();
+                Toast toast = Toast.makeText(getContext(), "Added", Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
 

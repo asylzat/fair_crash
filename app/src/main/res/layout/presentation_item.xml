@@ -18,12 +18,20 @@
 
             <TextView
                 android:id="@+id/presentation_info"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="TextView" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/presentation_time5"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="end" />
 
         <TextView
             android:id="@+id/add_item"
