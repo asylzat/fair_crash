@@ -17,7 +17,8 @@ import java.util.List;
 public class PresentationAdapter extends ArrayAdapter<Presentation>{
     private List<Presentation> list;
     private Context context;
-    TextView presentationName,
+    TextView  presentationTitle,
+            presentationName,
             presentationInfo,
             presentationTime,
             addPresentation;
@@ -40,11 +41,13 @@ public class PresentationAdapter extends ArrayAdapter<Presentation>{
 
         final Presentation presentation = getItem(position);
 
+        presentationTitle = (TextView)listItemView.findViewById(R.id.presentation_title);
         presentationName = (TextView)listItemView.findViewById(R.id.presentation_name);
-        presentationInfo = (TextView)listItemView.findViewById(R.id.presentation_info);
+        //presentationInfo = (TextView)listItemView.findViewById(R.id.presentation_info);
         presentationTime = (TextView)listItemView.findViewById(R.id.presentation_time);
         addPresentation = (TextView)listItemView.findViewById(R.id.add_item);
 
+        presentationTitle.setText(presentation.getTitle());
         presentationName.setText(presentation.getName());
         presentationTime.setText(String.valueOf(presentation.getTime()));
 
@@ -54,7 +57,7 @@ public class PresentationAdapter extends ArrayAdapter<Presentation>{
                 MainActivity.presentations.add(presentation);
                 notifyDataSetChanged();
                 myAgenda.calculateTotal();
-                Toast toast = Toast.makeText(getContext(), "Added", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getContext(), "Added!", Toast.LENGTH_SHORT);
                 toast.show();
             }
         });

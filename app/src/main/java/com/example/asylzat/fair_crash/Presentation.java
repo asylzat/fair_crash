@@ -27,7 +27,7 @@ public class Presentation  implements Serializable {
     }
 
     public void setTitle(String title) {
-        title = title;
+        this.title = title;
     }
 
     public int getTime() {

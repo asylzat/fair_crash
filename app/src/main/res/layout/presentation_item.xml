@@ -17,7 +17,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/presentation_info"
+                android:id="@+id/presentation_title"
                 android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
