@@ -17,6 +17,7 @@ import com.example.asylzat.fair_crash.EventAdapter;
 import com.example.asylzat.fair_crash.MainActivity;
 import com.example.asylzat.fair_crash.Presentation;
 import com.example.asylzat.fair_crash.PresentationAdapter;
+import com.example.asylzat.fair_crash.PresentationEventAdapter;
 import com.example.asylzat.fair_crash.R;
 
 import java.util.List;
@@ -47,7 +48,7 @@ public class MyAgenda extends Fragment {
                 getActivity(), this,
                 events );
 
-        ArrayAdapter<Presentation> arrayAdapter1 = new PresentationAdapter(
+        ArrayAdapter<Presentation> arrayAdapter1 = new PresentationEventAdapter(
                 getActivity(), this,
                 presentations);
 
