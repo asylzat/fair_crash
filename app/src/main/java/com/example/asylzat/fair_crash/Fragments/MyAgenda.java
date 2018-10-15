@@ -15,13 +15,16 @@ import android.widget.TextView;
 import com.example.asylzat.fair_crash.Company;
 import com.example.asylzat.fair_crash.EventAdapter;
 import com.example.asylzat.fair_crash.MainActivity;
+import com.example.asylzat.fair_crash.Presentation;
 import com.example.asylzat.fair_crash.R;
 
 import java.util.List;
 
 public class MyAgenda extends Fragment {
     ListView lv;
+    ListView listView;
     List<Company> events;
+    List<Presentation> presentations;
     TextView totalTime;
     int total = 0;
     @Nullable
@@ -31,18 +34,18 @@ public class MyAgenda extends Fragment {
 
         events = MainActivity.getEvents();
         lv = (ListView) view.findViewById(R.id.schedule);
-        totalTime = view.findViewById(R.id.total_time);
 
-        for (Company company : events) {
-            total += company.getDuration();
-        }
+        presentations =MainActivity.getPresentations();
+        listView = (ListView)view.findViewById(R.id.schedule2);
+        totalTime= view.findViewById(R.id.total_time);
+
+        calculateTotal();
 
         ArrayAdapter<Company> arrayAdapter = new EventAdapter(
-                getActivity(),
+                getActivity(), this,
                 events );
 
 
-        totalTime.setText(String.valueOf(total));
         lv.setAdapter(arrayAdapter);
         return view;
     }
@@ -61,10 +64,22 @@ public class MyAgenda extends Fragment {
         this.total = total;
     }
 
-    public void changeTotal(int duration){
-        setTotal(total - duration);
-        FragmentTransaction ftr = getFragmentManager().beginTransaction();
-        ftr.detach(this).attach(this).commit();
+
+    public void calculateTotal(){
+        total = 0;
+        for (Company company : MainActivity.getEvents()) {
+            total += company.getDuration();
+        }
+        for (Presentation presentation: MainActivity.getPresentations()) {
+            total += presentation.getTime();
+        }
+
+        if (totalTime != null) {
+            totalTime.setText(String.valueOf(total));
+
+        }
+
     }
+
 
 }

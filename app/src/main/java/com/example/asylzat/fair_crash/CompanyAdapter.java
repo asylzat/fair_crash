@@ -19,7 +19,6 @@ public class CompanyAdapter extends ArrayAdapter<Company> {
     private List<Company> list;
     private Context context;
     TextView companyName,
-             companyInfo,
              companyLink,
              companyTime,
              addCompany;

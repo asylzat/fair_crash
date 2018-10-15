@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity
 
     public static ArrayList<Company> events;
     public static ArrayList<Company> companies;
+    public static ArrayList<Presentation> presentations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity
         events = new ArrayList<Company>();
 
         companies = new ArrayList<Company>();
+
+        presentations = new ArrayList<Presentation>();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -116,5 +119,9 @@ public class MainActivity extends AppCompatActivity
 
     public static ArrayList<Company> getCompanies() {
         return companies;
+    }
+
+    public static ArrayList<Presentation> getPresentations() {
+        return presentations;
     }
 }

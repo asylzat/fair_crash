@@ -60,34 +60,47 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:orientation="horizontal">
 
             <ListView
                 android:id="@+id/schedule"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="200dp"
+                android:layout_marginTop="0dp" />
+
+
         </LinearLayout>
 
-        <View
-            android:id="@+id/view"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="200dp"
+            android:orientation="horizontal">
+
+            <ListView
+                android:id="@+id/schedule2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="0dp" />
+
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal">
 
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_gravity="end"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/total_time"
                 android:textAlignment="textEnd"
-                android:layout_gravity="end"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
@@ -97,11 +110,11 @@
                 android:id="@+id/total_time"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
+                android:layout_gravity="end"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
                 android:textAlignment="textEnd"
-                android:layout_gravity="end"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"

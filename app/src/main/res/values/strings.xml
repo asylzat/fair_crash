@@ -11,4 +11,5 @@
     <string name="calendar">calendar</string>
     <string name="total_time">Total time at fair:</string>
     <string name="consultation_duration">Duration of consultation</string>
+    <string name="presentation_duration">Duration of presentation</string>
 </resources>

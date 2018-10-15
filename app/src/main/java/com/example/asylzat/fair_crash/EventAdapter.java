@@ -20,11 +20,12 @@ public class EventAdapter extends ArrayAdapter<Company> {
     TextView currentEventName,
             currentEventTime,
             removeEvent;
-    MyAgenda myAgenda = new MyAgenda();
+    MyAgenda myAgenda;
 
-    public EventAdapter(Context context, List<Company> list) {
+    public EventAdapter(Context context, MyAgenda myAgenda, List<Company> list) {
         super(context, 0, list);
         this.list = list;
+        this.myAgenda = myAgenda;
         this.context = context;
     }
 
@@ -57,7 +58,7 @@ public class EventAdapter extends ArrayAdapter<Company> {
             @Override
             public void onClick(View view) {
                 list.remove(position);
-                myAgenda.changeTotal(currentEvent.getDuration());
+                myAgenda.calculateTotal();
                 notifyDataSetChanged();
             }
         });

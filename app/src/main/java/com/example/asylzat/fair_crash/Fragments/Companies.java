@@ -94,10 +94,6 @@ public class Companies extends Fragment  {
                         String link = c.getString("link");
                         String time = c.getString("time_required_to_visit");
 
-
-                        // tmp hash map for single contact
-//                        HashMap<String, String> company = new HashMap<>();
-
                         Company company = new Company();
                         company.setName(name);
                         company.setInfo(info);
@@ -105,14 +101,6 @@ public class Companies extends Fragment  {
                         company.setDuration(time);
                         company.setLink(link);
 
-                        // adding each child node to HashMap key => value
-//                        company.put("name", name);
-//                        company.put("info", info);
-//                        company.put("link", link);
-//                        company.put("time", time);
-
-
-                        // adding contact to contact list
                         companies.add(company);
                     }
                 } catch (final JSONException e) {
