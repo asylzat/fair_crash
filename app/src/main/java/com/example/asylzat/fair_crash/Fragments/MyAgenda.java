@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ public class MyAgenda extends Fragment {
     ListView lv;
     List<Company> events;
     TextView totalTime;
-
+    int total = 0;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,7 +33,6 @@ public class MyAgenda extends Fragment {
         lv = (ListView) view.findViewById(R.id.schedule);
         totalTime = view.findViewById(R.id.total_time);
 
-        int total = 0;
         for (Company company : events) {
             total += company.getDuration();
         }
@@ -51,6 +51,18 @@ public class MyAgenda extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("My Agenda");
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public void changeTotal(int duration){
+        setTotal(total - duration);
     }
 
 }

@@ -1,10 +1,13 @@
 package com.example.asylzat.fair_crash;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,21 +43,29 @@ public class CompanyAdapter extends ArrayAdapter<Company> {
 
         companyName = (TextView)listItemView.findViewById(R.id.company_name);
         companyLogo = (ImageView) listItemView.findViewById(R.id.company_logo);
-        companyInfo = (TextView)listItemView.findViewById(R.id.company_info);
         companyLink = (TextView)listItemView.findViewById(R.id.company_link);
         companyTime = (TextView)listItemView.findViewById(R.id.company_time);
         addCompany = (TextView)listItemView.findViewById(R.id.add_item);
 
         companyName.setText(company.getName());
-//        companyInfo.setText(company.getInfo());
         companyTime.setText(String.valueOf(company.getDuration()));
-        companyLink.setText(company.getLink());
+
+        companyLink.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String url = company.getLink();
+
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                context.startActivity(i);
+            }
+        });
+
         Picasso.with(context).load(company.getLogo())
-                .resize(200, 200)
-                .centerCrop().into(companyLogo);
+                .resize(400, 400)
+                .centerInside().into(companyLogo);
 
-
-        //OnClick listeners for all the buttons on the ListView Item
 
         addCompany.setOnClickListener(new View.OnClickListener() {
             @Override

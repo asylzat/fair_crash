@@ -1,5 +1,5 @@
 package com.example.asylzat.fair_crash;
-        ;
+
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+        import com.example.asylzat.fair_crash.Fragments.MyAgenda;
 
         import java.util.List;
 
@@ -18,6 +20,7 @@ public class EventAdapter extends ArrayAdapter<Company> {
     TextView currentEventName,
             currentEventTime,
             removeEvent;
+    MyAgenda myAgenda = new MyAgenda();
 
     public EventAdapter(Context context, List<Company> list) {
         super(context, 0, list);
@@ -49,12 +52,12 @@ public class EventAdapter extends ArrayAdapter<Company> {
         }
         currentEventName.setText(currentEvent.getName());
 
-//        totalTime.setText(getTotal());
 
         removeEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 list.remove(position);
+                myAgenda.changeTotal(currentEvent.getDuration());
                 notifyDataSetChanged();
             }
         });
