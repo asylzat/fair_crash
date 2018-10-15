@@ -10,5 +10,5 @@
     <string name="time">09:00-14:00</string>
     <string name="calendar">calendar</string>
     <string name="total_time">Total time at fair:</string>
-    <string name="todo">TODO</string>
+    <string name="consultation_duration">Duration of consultation</string>
 </resources>
