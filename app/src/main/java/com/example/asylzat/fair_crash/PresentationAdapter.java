@@ -43,7 +43,6 @@ public class PresentationAdapter extends ArrayAdapter<Presentation>{
 
         presentationTitle = (TextView)listItemView.findViewById(R.id.presentation_title);
         presentationName = (TextView)listItemView.findViewById(R.id.presentation_name);
-        //presentationInfo = (TextView)listItemView.findViewById(R.id.presentation_info);
         presentationTime = (TextView)listItemView.findViewById(R.id.presentation_time);
         addPresentation = (TextView)listItemView.findViewById(R.id.add_item);
 
@@ -54,7 +53,7 @@ public class PresentationAdapter extends ArrayAdapter<Presentation>{
         addPresentation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.presentations.add(presentation);
+                MainActivity.presentationEvents.add(presentation);
                 notifyDataSetChanged();
                 myAgenda.calculateTotal();
                 Toast toast = Toast.makeText(getContext(), "Added!", Toast.LENGTH_SHORT);

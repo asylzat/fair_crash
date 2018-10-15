@@ -26,7 +26,7 @@ public class MyAgenda extends Fragment {
     ListView lv;
     ListView listView;
     List<Company> events;
-    List<Presentation> presentations;
+    List<Presentation> presentationEvents;
     TextView totalTime;
     int total = 0;
     @Nullable
@@ -37,7 +37,7 @@ public class MyAgenda extends Fragment {
         events = MainActivity.getEvents();
         lv = (ListView) view.findViewById(R.id.schedule);
 
-        presentations =MainActivity.getPresentations();
+        presentationEvents =MainActivity.getPresentationEvents();
         listView = (ListView)view.findViewById(R.id.schedule2);
 
         totalTime= view.findViewById(R.id.total_time);
@@ -50,7 +50,7 @@ public class MyAgenda extends Fragment {
 
         ArrayAdapter<Presentation> arrayAdapter1 = new PresentationEventAdapter(
                 getActivity(), this,
-                presentations);
+                presentationEvents);
 
 
         lv.setAdapter(arrayAdapter);
@@ -78,7 +78,7 @@ public class MyAgenda extends Fragment {
         for (Company company : MainActivity.getEvents()) {
             total += company.getDuration();
         }
-        for (Presentation presentation: MainActivity.getPresentations()) {
+        for (Presentation presentation: MainActivity.getPresentationEvents()) {
             total += presentation.getTime();
         }
 
