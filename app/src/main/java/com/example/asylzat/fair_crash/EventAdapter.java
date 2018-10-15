@@ -7,8 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
-        import com.example.asylzat.fair_crash.Fragments.MyAgenda;
+import com.example.asylzat.fair_crash.Fragments.MyAgenda;
 
         import java.util.List;
 
@@ -60,6 +61,8 @@ public class EventAdapter extends ArrayAdapter<Company> {
                 list.remove(position);
                 myAgenda.calculateTotal();
                 notifyDataSetChanged();
+                Toast toast = Toast.makeText(getContext(), "Added", Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
 

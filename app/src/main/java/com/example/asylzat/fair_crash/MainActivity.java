@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity
     public static ArrayList<Company> events;
     public static ArrayList<Company> companies;
     public static ArrayList<Presentation> presentations;
+    MyAgenda myAgenda = new MyAgenda();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,9 +91,11 @@ public class MainActivity extends AppCompatActivity
 
         Fragment fragment = null;
 
+
+
         switch (itemId) {
             case R.id.nav_my_agenda:
-                fragment = new MyAgenda();
+                fragment = myAgenda;
                 break;
             case R.id.nav_companies:
                 fragment = new Companies();
@@ -122,6 +125,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     public static ArrayList<Presentation> getPresentations() {
+
         return presentations;
+    }
+
+    public MyAgenda getMyAgenda() {
+        return myAgenda;
     }
 }

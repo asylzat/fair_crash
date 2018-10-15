@@ -16,6 +16,7 @@ import com.example.asylzat.fair_crash.Company;
 import com.example.asylzat.fair_crash.EventAdapter;
 import com.example.asylzat.fair_crash.MainActivity;
 import com.example.asylzat.fair_crash.Presentation;
+import com.example.asylzat.fair_crash.PresentationAdapter;
 import com.example.asylzat.fair_crash.R;
 
 import java.util.List;
@@ -37,6 +38,7 @@ public class MyAgenda extends Fragment {
 
         presentations =MainActivity.getPresentations();
         listView = (ListView)view.findViewById(R.id.schedule2);
+
         totalTime= view.findViewById(R.id.total_time);
 
         calculateTotal();
@@ -45,8 +47,13 @@ public class MyAgenda extends Fragment {
                 getActivity(), this,
                 events );
 
+        ArrayAdapter<Presentation> arrayAdapter1 = new PresentationAdapter(
+                getActivity(), this,
+                presentations);
+
 
         lv.setAdapter(arrayAdapter);
+        listView.setAdapter(arrayAdapter1);
         return view;
     }
 

@@ -44,7 +44,7 @@ public class FairAgenda extends Fragment {
         lv = (ListView) view.findViewById(R.id.presentations);
 
         ArrayAdapter<Presentation> arrayAdapter = new PresentationAdapter(
-                getActivity(),
+                getActivity(), ((MainActivity)getActivity()).getMyAgenda(),
                 presentations);
 
         new GetPresentations().execute();
@@ -82,7 +82,6 @@ public class FairAgenda extends Fragment {
 
             if (jsonStr != null) {
                 try {
-//                    JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting JSON Array node
                     JSONArray contacts = new JSONArray(jsonStr);
@@ -139,7 +138,7 @@ public class FairAgenda extends Fragment {
              * Updating parsed JSON data into ListView
              * */
             ListAdapter adapter = new PresentationAdapter(
-                    getActivity(),
+                    getActivity(), ((MainActivity)getActivity()).getMyAgenda(),
                     presentations);
 
             lv.setAdapter(adapter);

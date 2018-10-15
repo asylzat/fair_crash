@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.asylzat.fair_crash.Fragments.MyAgenda;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,11 +21,13 @@ public class PresentationAdapter extends ArrayAdapter<Presentation>{
             presentationInfo,
             presentationTime,
             addPresentation;
+    MyAgenda myAgenda;
 
-    public PresentationAdapter(Context context, List<Presentation> list) {
+    public PresentationAdapter(Context context, MyAgenda myAgenda, List<Presentation> list) {
         super(context, 0, list);
         this.list = list;
         this.context = context;
+        this.myAgenda = myAgenda;
     }
 
     public View getView(final int position, View convertView, ViewGroup parent){
@@ -50,6 +53,7 @@ public class PresentationAdapter extends ArrayAdapter<Presentation>{
             public void onClick(View view) {
                 MainActivity.presentations.add(presentation);
                 notifyDataSetChanged();
+                myAgenda.calculateTotal();
                 Toast toast = Toast.makeText(getContext(), "Added", Toast.LENGTH_SHORT);
                 toast.show();
             }

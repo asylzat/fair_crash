@@ -79,7 +79,6 @@ public class Companies extends Fragment  {
 
             if (jsonStr != null) {
                 try {
-//                    JSONObject jsonObj = new JSONObject(jsonStr);
 
                     // Getting JSON Array node
                     JSONArray contacts = new JSONArray(jsonStr);

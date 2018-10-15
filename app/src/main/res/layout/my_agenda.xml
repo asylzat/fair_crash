@@ -63,9 +63,15 @@
             android:layout_height="200dp"
             android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="151dp"
+                android:layout_weight="1"
+                android:text="Consultations" />
+
             <ListView
                 android:id="@+id/schedule"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="0dp" />
 
@@ -77,9 +83,17 @@
             android:layout_height="200dp"
             android:orientation="horizontal">
 
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_weight="1"
+                android:text="Prseentations"
+                android:textDirection="ltr" />
+
             <ListView
                 android:id="@+id/schedule2"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:layout_marginTop="0dp" />
 
