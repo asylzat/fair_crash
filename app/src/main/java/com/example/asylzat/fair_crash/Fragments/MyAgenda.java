@@ -63,6 +63,8 @@ public class MyAgenda extends Fragment {
 
     public void changeTotal(int duration){
         setTotal(total - duration);
+        FragmentTransaction ftr = getFragmentManager().beginTransaction();
+        ftr.detach(this).attach(this).commit();
     }
 
 }
